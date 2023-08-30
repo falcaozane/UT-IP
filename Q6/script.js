@@ -6,18 +6,6 @@ const clearCartButton = document.getElementById('clear-cart');
 
 let cart = [];
 
-addToCartButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        addToCart(index);
-        updateCartDisplay();
-    });
-});
-
-clearCartButton.addEventListener('click', () => {
-    cart = [];
-    updateCartDisplay();
-});
-
 function addToCart(productIndex) {
     const product = products[productIndex];
     const name = product.querySelector('h2').textContent;
@@ -57,5 +45,19 @@ function updateCartDisplay() {
         });
     });
 }
+
+addToCartButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        addToCart(index);
+        updateCartDisplay();
+    });
+});
+
+clearCartButton.addEventListener('click', () => {
+    cart = [];
+    updateCartDisplay();
+});
+
+
 
 updateCartDisplay();

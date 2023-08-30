@@ -7,6 +7,28 @@ const scoreElement = document.getElementById('score');
 let currentQuestionIndex = 0;
 let score = 0;
 
+const questions = [
+    {
+        question: "What is the capital of France?",
+        answers: [
+            { text: "Berlin", correct: false },
+            { text: "Paris", correct: true },
+            { text: "Rome", correct: false },
+            { text: "Madrid", correct: false }
+        ]
+    },
+    {
+        question: "Which planet is known as the 'Red Planet'?",
+        answers: [
+            { text: "Venus", correct: false },
+            { text: "Mars", correct: true },
+            { text: "Jupiter", correct: false },
+            { text: "Saturn", correct: false }
+        ]
+    },
+    // Add more questions here
+];
+
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
     setNextQuestion();
@@ -87,26 +109,6 @@ function updateScore() {
     scoreElement.innerText = `Score: ${score}`;
 }
 
-const questions = [
-    {
-        question: "What is the capital of France?",
-        answers: [
-            { text: "Berlin", correct: false },
-            { text: "Paris", correct: true },
-            { text: "Rome", correct: false },
-            { text: "Madrid", correct: false }
-        ]
-    },
-    {
-        question: "Which planet is known as the 'Red Planet'?",
-        answers: [
-            { text: "Venus", correct: false },
-            { text: "Mars", correct: true },
-            { text: "Jupiter", correct: false },
-            { text: "Saturn", correct: false }
-        ]
-    },
-    // Add more questions here
-];
+
 
 startQuiz();
